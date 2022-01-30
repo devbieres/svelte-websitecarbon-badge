@@ -1,5 +1,5 @@
 <script>
-    import { WebCarbonBadge } from "$lib";
+    import { WebCarbonBadge, WebCarbonBadgeV2 } from "$lib";
 
     let darkMode = false;
 
@@ -7,7 +7,13 @@
 
 DarkMode : <input type=checkbox bind:checked={darkMode}>
 
-<WebCarbonBadge {darkMode} />
+<!-- <WebCarbonBadge {darkMode} /> -->
 
+<hr/>
+
+<WebCarbonBadgeV2 url='https://sveltekit-github-issues.vercel.app/app' {darkMode} />
+
+
+<WebCarbonBadgeV2 {darkMode} />
 
 
