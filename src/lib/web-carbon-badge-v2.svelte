@@ -8,11 +8,12 @@
 	// Export
 	// -- DarkMode
 	export let darkMode = true;
-	// -- URL
-	export let url = '';
 
     // Data
+	// -- Result
     let result: Result;
+	// -- Url
+	const url = window.location.href;
 
     // Reactivity
     $: carbon =  result ?  (result.error ? 'Error' : `${result.c}g of CO<sub>2</sub>/view`) : 'Measuring CO<sub>2</sub>&hellip;';
@@ -22,24 +23,12 @@
         try {
             // Retreive data
             result = await getData(
-				validUrl(url)
+				url
 			);
         } catch (error) {
             console.error(error);
         }
     })
-
-	/**
-	 * Try to manage if not url set 
-	 * @param url
-	 */
-	const validUrl = (url: string) => {
-		if(! url) {
-			return window.location.href;
-		}
-		return url;
-	}
-
 
 </script>
 

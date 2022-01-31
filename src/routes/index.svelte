@@ -11,9 +11,6 @@ DarkMode : <input type=checkbox bind:checked={darkMode}>
 
 <hr/>
 
-<WebCarbonBadgeV2 url='https://sveltekit-github-issues.vercel.app/app' {darkMode} />
-
-
 <WebCarbonBadgeV2 {darkMode} />
 
 
